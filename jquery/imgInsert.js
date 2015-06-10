@@ -5,18 +5,54 @@
 
 
 
-document.getElementById('lfwUl').style.width = "2000px";
+document.getElementById('myList').style.width = "2000px" ; // set this to the total length of all images
 
 
+//set items to correct  height and width
+
+	// get a list of all items
 
 
+		// decide if portrait or landscape
+
+		// get the aspect ration
+
+		// resize
 
 
+setImgSize(myList, sliderContent);
 
-	
+function setImgSize(list, viewerId){
 
+	var elementChildren = list.children;
+	for (var i = 0; i < elementChildren.length; i++) {
+	    
+		var imgNaturalHeight = list.children[i].children[0].naturalHeight;
+		var imgNaturalWidth = list.children[i].children[0].naturalWidth;
+		var imgRatio = imgNaturalHeight/imgNaturalWidth;
+	    
+	    var NewHeight = document.getElementById("sliderContent").scrollHeight;
+	    list.children[i].children[0].style.height = NewHeight;
+	    list.children[i].children[0].style.width = imgNaturalWidth * imgRatio;
 
+		/*//resize portrait 
+	    if (imgNaturalHeight > imgNaturalWidth) {
+	    	var NewHeight = document.getElementById("sliderContent").style.height;
+	    	list.children[i].children[0].style.height = NewHeight;
+	    	list.children[i].children[0].style.height = imgNaturalWidth * imgRatio;
+	    }
+	    else if (imgNaturalHeight <= imgNaturalWidth) {
+	    	var NewHeight = document.getElementById("sliderContent").style.height;
+	    	list.children[i].children[0].style.height = NewHeight;
+	    	list.children[i].children[0].style.height = imgNaturalWidth * imgRatio;
+	    }
+	    else {
+	    	console.log("bypassed");
+	    };
+	    -*/
 
+	};
+}
 
 
 
