@@ -19,22 +19,6 @@ document.getElementById('myList').style.width = "2000px" ; // set this to the to
 
 		// resize
 
-
-setImgSize(myList, sliderContent);
-
-function setImgSize(list, viewerId){
-
-	var elementChildren = list.children;
-	for (var i = 0; i < elementChildren.length; i++) {
-	    
-		var imgNaturalHeight = list.children[i].children[0].naturalHeight;
-		var imgNaturalWidth = list.children[i].children[0].naturalWidth;
-		var imgRatio = imgNaturalHeight/imgNaturalWidth;
-	    
-	    var NewHeight = document.getElementById("sliderContent").scrollHeight;
-	    list.children[i].children[0].style.height = NewHeight;
-	    list.children[i].children[0].style.width = imgNaturalWidth * imgRatio;
-
 		/*//resize portrait 
 	    if (imgNaturalHeight > imgNaturalWidth) {
 	    	var NewHeight = document.getElementById("sliderContent").style.height;
@@ -51,14 +35,43 @@ function setImgSize(list, viewerId){
 	    };
 	    -*/
 
+setImgSize(myList, sliderContent);
+
+function setImgSize(list, viewerId){
+
+	var elementChildren = list.children;
+	for (var i = 0; i < elementChildren.length; i++) {
+	    
+		var imgNaturalHeight = list.children[i].children[0].naturalHeight;
+		var imgNaturalWidth = list.children[i].children[0].naturalWidth;
+		var imgRatio = imgNaturalHeight/imgNaturalWidth;
+	    
+	    var NewHeight = document.getElementById("sliderContent").scrollHeight;
+	    list.children[i].children[0].style.height = NewHeight;
+	    list.children[i].children[0].style.width = imgNaturalWidth * imgRatio;
+
 	};
+ 	
+ 	$(function() {
+	////////Window size/////////
+	  	//Set slidercontent height
+		$("#sliderContent").css("width",($(window).width()-218));
+    
+		//Set .viewer Height
+		$(".viewer").css("height", ($(window).height()-220));
+	
+		//Set .viewer width
+		$(".viewer").css("width", ($(window).width()-230));
+			
+		//set length of conveyor
+		conveyor.css("width", (itemP.length * parseInt(itemP.css("width"))));
 }
 
 
 
-      $(function() {
-		  
-		  
+
+
+   
 		  	////////Window size/////////
 		  	//Set slidercontent height
 			$("#sliderContent").css("width",($(window).width()-218));
@@ -68,8 +81,8 @@ function setImgSize(list, viewerId){
 		
 			//Set .viewer width
 			$(".viewer").css("width", ($(window).width()-230));
-			
-			///////Image size//////////	
+						
+			/////Image size//////////	
 			//Set portrait image height
 			$(".portrait").css("height",( $(document).height()-240));		
 			//set portrait image width
@@ -105,4 +118,5 @@ function setImgSize(list, viewerId){
 
         //create slider
         $("#slider").slider(sliderOpts);
-      });
+      }); 
+      

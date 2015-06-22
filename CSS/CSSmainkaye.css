@@ -5,11 +5,8 @@
 /*----FontFace----*/
 
 @font-face {
-
 	font-family:Century Gothic;
-
 	src:url(../fonts/GOTHIC.TTF);
-
 }
 
 /*---------Anchors-----------*/
@@ -99,7 +96,6 @@ header h1 {
 	height:30px;
 	margin:0px;
 	padding:0px;
-
 }
 
 nav {
@@ -121,7 +117,6 @@ nav ul {
 nav li {
 	padding:5px;
 	margin: 0;	
-
 }
 
 section {
@@ -129,7 +124,6 @@ section {
 	color:#888888;
 	width:auto;
 	height:auto;
-
 }
 
 .homeimg {
@@ -137,7 +131,6 @@ section {
 	height:540px;
 	float:right;
 	margin-top:17px;
-
 }
 
 #contactblurb {
@@ -149,6 +142,10 @@ section {
 	font-size:20px;
 	text-align:justify;
 	color:#555;
+}
+
+img {
+	height: 500px;
 }
 
 #contactlink {
